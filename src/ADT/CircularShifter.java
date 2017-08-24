@@ -10,12 +10,13 @@ public class CircularShifter implements CircularShift {
     
     private List<String> titles;
     private List<String> ignoreWords;
+    private List<String> shiftedTitles;
     
     //Constructor
     public CircularShifter(List<String> titles, List<String> ignoreWords) {
         this.titles = titles;
         this.ignoreWords = ignoreWords;
-        titles = circularShift(titles, ignoreWords);     
+        shiftedTitles = circularShift(titles, ignoreWords);     
     }
     
     public CircularShifter(){
@@ -52,9 +53,6 @@ public class CircularShifter implements CircularShift {
 
     @Override
     public List<String> getShiftedTitles() {
-        for(String title:titles){
-            System.out.println("here: " + title);
-       }
-        return titles;
+        return shiftedTitles;
     }
 }
