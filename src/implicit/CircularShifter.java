@@ -20,14 +20,17 @@ public class CircularShifter implements Shifter {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void onChanged(javafx.collections.ListChangeListener.Change<? extends String> c) {
+		if (c.wasAdded()) {
+			List<String> added = (List<String>) c.getAddedSubList();
+			List<String> addedShifted = shift(added);
+			destination.addAll(addedShifted);
+		}
 
-		List<String> added = (List<String>) c.getAddedSubList();
-		List<String> addedShifted = shift(added);
-		destination.addAll(addedShifted);
-
-		List<String> removed = (List<String>) c.getRemoved();
-		List<String> removedShifted = shift(removed);
-		destination.removeAll(removedShifted);
+		if (c.wasRemoved()) {
+			List<String> removed = (List<String>) c.getRemoved();
+			List<String> removedShifted = shift(removed);
+			destination.removeAll(removedShifted);
+		}
 
 	}
 
@@ -40,7 +43,7 @@ public class CircularShifter implements Shifter {
 			if (words.isEmpty()) {
 				throw new IllegalArgumentException("A line cannot be only composed of spaces characters");
 			}
-			
+
 			String firstWord = words.getFirst();
 			for (int i = 0; i < words.size(); i++) {
 				if (!ignoredWords.contains(firstWord)) {
@@ -58,5 +61,5 @@ public class CircularShifter implements Shifter {
 		}
 		return shifted;
 	}
-	
+
 }
