@@ -24,9 +24,4 @@ public class AlphabeticShifter implements AlphabeticShift {
         return titles;
     }
     
-    public void printSortedTitles(){
-        for(String title:titles){
-             System.out.println(title);
-        }
-    }
 }
