@@ -11,19 +11,22 @@ import java.util.List;
 
 public class CircularShifter implements CircularShift {
     
-    private List<String> titles;
-    private List<String> ignoreWords;
+    //private List<String> titles;
+    //private List<String> ignoreWords; 
+    //FIXME not used (I must insist) 
     private List<String> shiftedTitles;
     
     //Constructor
     public CircularShifter(List<String> titles, List<String> ignoreWords) {
-        this.titles = titles;
-        this.ignoreWords = ignoreWords;
+        //this.titles = titles;
+        //this.ignoreWords = ignoreWords;
         shiftedTitles = circularShift(titles, ignoreWords);     
     }
     
+    
+    //FIXME Why implementing a constructor that would create an useless object, worst: getShiftedTitles would return a null pointer :-(
     public CircularShifter(){
-        this.titles = new LinkedList<>();
+        //this.titles = new LinkedList<>();
     }
 
     private List<String> circularShift(List<String> titles, List<String> ignoreWords) {       

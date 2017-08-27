@@ -14,7 +14,7 @@ public class AlphabeticShifter implements AlphabeticShift {
     //Constructor
     public AlphabeticShifter(List<String> titles) {
         this.titles = titles;
-        titles = alphabeticSort(titles);
+        titles = alphabeticSort(titles); //FIXME why titles = ... ? the pointer don't change would be usefull only if you mean to make a sorted copy of the array but then it should be this.titles and no titles
     }
     
     //Sorts lines in ascending alphabetic order

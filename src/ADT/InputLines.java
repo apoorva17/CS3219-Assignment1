@@ -22,7 +22,7 @@ public class InputLines implements Input {
 	@Override
 	public int readInput(List<String> inputLines, List<String> ignoreWords) throws IOException {
 		int designChoice;
-		Scanner sc = new Scanner(System.in);
+		try(Scanner sc = new Scanner(System.in)){
 
 		System.out.println("Welcome to KWIC!");
 		System.out.println("Enter lines: ");
@@ -45,6 +45,7 @@ public class InputLines implements Input {
 		System.out.println("Choose architecutre design. Type 1 for Abstract Data Type and 2 for XXX: ");
 		designChoice = sc.nextInt();
 		return designChoice;
+		}
 	}
 
 }

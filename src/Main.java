@@ -5,12 +5,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
-import implicit.AlphabeticShifter;
-import implicit.CircularShifter;
-import implicit.IgnoredWordsShifter;
-import implicit.ObservableLines;
 
 public class Main {
 
