@@ -1,3 +1,7 @@
+/**
+ * Implemented by Apoorva, A0141138N
+ */
+
 package ADT;
 
 import java.util.ArrayList;
@@ -8,7 +12,7 @@ import java.util.List;
 public class CircularShifter implements CircularShift {
     
     private List<String> titles;
-    private List<String> ignoreWords; //FIXME not used, then why?
+    private List<String> ignoreWords;
     private List<String> shiftedTitles;
     
     //Constructor
