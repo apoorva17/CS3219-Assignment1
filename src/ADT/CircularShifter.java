@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 public class CircularShifter implements CircularShift {
     
     private List<String> titles;
-    private List<String> ignoreWords;
+    private List<String> ignoreWords; //FIXME not used, then why?
     private List<String> shiftedTitles;
     
     //Constructor

@@ -20,19 +20,19 @@ public class CircularShifter implements Shifter {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void onChanged(javafx.collections.ListChangeListener.Change<? extends String> c) {
-		c.next();
-		if (c.wasAdded()) {
-			List<String> added = (List<String>) c.getAddedSubList();
-			List<String> addedShifted = shift(added);
-			destination.addAll(addedShifted);
-		}
+		while (c.next()) {
+			if (c.wasAdded()) {
+				List<String> added = (List<String>) c.getAddedSubList();
+				List<String> addedShifted = shift(added);
+				destination.addAll(addedShifted);
+			}
 
-		if (c.wasRemoved()) {
-			List<String> removed = (List<String>) c.getRemoved();
-			List<String> removedShifted = shift(removed);
-			destination.removeAll(removedShifted);
+			if (c.wasRemoved()) {
+				List<String> removed = (List<String>) c.getRemoved();
+				List<String> removedShifted = shift(removed);
+				destination.removeAll(removedShifted);
+			}
 		}
-
 	}
 
 	@Override
