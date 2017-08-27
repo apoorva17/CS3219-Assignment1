@@ -10,6 +10,7 @@ public class AlphabeticShifter implements Shifter{
 
 	@Override
 	public void onChanged(javafx.collections.ListChangeListener.Change<? extends String> c) {
+		c.next();
 		if(c.wasAdded()){
 			FXCollections.sort(c.getList());
 		}
