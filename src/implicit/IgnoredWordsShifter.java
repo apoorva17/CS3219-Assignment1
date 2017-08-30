@@ -3,11 +3,9 @@ package implicit;
 import java.util.Iterator;
 import java.util.List;
 
-import javafx.collections.ObservableList;
-
 public class IgnoredWordsShifter implements Shifter {
 
-	private final ObservableList<String> destination;
+	private final List<String> destination;
 
 	public IgnoredWordsShifter(ObservableLines destination) {
 		this.destination = destination.get();

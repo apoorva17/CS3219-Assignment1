@@ -5,12 +5,10 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import javafx.collections.ObservableList;
-
-public class CircularShifter implements Shifter {
+public final class CircularShifter implements Shifter {
 
 	private final List<String> ignoredWords;
-	private final ObservableList<String> destination;
+	private final List<String> destination;
 
 	public CircularShifter(ObservableLines ignoredWords, ObservableLines destination) {
 		this.ignoredWords = Collections.unmodifiableList(ignoredWords.get());
@@ -19,7 +17,7 @@ public class CircularShifter implements Shifter {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void onChanged(javafx.collections.ListChangeListener.Change<? extends String> c) {
+	public final void onChanged(javafx.collections.ListChangeListener.Change<? extends String> c) {
 		while (c.next()) {
 			if (c.wasAdded()) {
 				List<String> added = (List<String>) c.getAddedSubList();
@@ -36,7 +34,7 @@ public class CircularShifter implements Shifter {
 	}
 
 	@Override
-	public List<String> shift(List<String> lines) {
+	public final List<String> shift(List<String> lines) {
 		List<String> shifted = new LinkedList<>();
 		for (String line : lines) {
 

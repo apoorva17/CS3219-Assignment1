@@ -19,7 +19,7 @@ public class AlphabeticShifter implements AlphabeticShift {
     
     //Sorts lines in ascending alphabetic order
     private List<String> alphabeticSort(List<String> titles) {
-        Collections.sort(titles);
+        Collections.sort(titles); //FIXME use String.CASE_INSENSITIVE_ORDER. So A B a b will be sorted as A a B b and not A B a b
         return titles;
     }
 

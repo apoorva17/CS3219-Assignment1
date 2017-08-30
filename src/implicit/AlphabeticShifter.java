@@ -12,7 +12,7 @@ public class AlphabeticShifter implements Shifter {
 	public void onChanged(javafx.collections.ListChangeListener.Change<? extends String> c) {
 		while (c.next()) {
 			if (c.wasAdded()) {
-				FXCollections.sort(c.getList());
+				FXCollections.sort(c.getList(),String.CASE_INSENSITIVE_ORDER);
 			}
 		}
 	}
@@ -23,7 +23,7 @@ public class AlphabeticShifter implements Shifter {
 	@Override
 	public List<String> shift(List<String> toShift) {
 		List<String> shifted = new ArrayList<>(toShift);
-		Collections.sort(shifted);
+		Collections.sort(shifted,String.CASE_INSENSITIVE_ORDER);
 		return shifted;
 	}
 

@@ -42,7 +42,7 @@ public class GUI extends Application {
 		 * INPUT LINES
 		 */
 		TextArea linesIn = new TextArea();
-		linesIn.setPrefSize(250, 400);
+		linesIn.setPrefSize(300, 400);
 		Button addLines = new Button("Add lines");
 		addLines.setOnAction(e->{
 			String[] toAdd = readInput(linesIn.getText());
@@ -96,6 +96,9 @@ public class GUI extends Application {
 		ListView<String> linesView = new ListView<>(lines.get());
 		ListView<String> ignoredView = new ListView<>(ignoredWords.get());
 		ListView<String> resultView = new ListView<>(result.get());
+		linesView.setPrefSize(400, 300);
+		ignoredView.setPrefSize(400, 300);
+		resultView.setPrefSize(400, 600);
 		
 		Text resText = new Text("Result:");
 		BorderPane resultViewPane = new BorderPane(resultView,resText,null,null,null);
