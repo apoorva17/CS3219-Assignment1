@@ -6,7 +6,7 @@ import java.util.List;
 
 import javafx.collections.FXCollections;
 
-public class AlphabeticShifter implements Shifter {
+public final class AlphabeticShifter implements Shifter {
 
 	@Override
 	public void onChanged(javafx.collections.ListChangeListener.Change<? extends String> c) {

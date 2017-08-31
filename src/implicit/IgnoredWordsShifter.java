@@ -3,7 +3,7 @@ package implicit;
 import java.util.Iterator;
 import java.util.List;
 
-public class IgnoredWordsShifter implements Shifter {
+public final class IgnoredWordsShifter implements Shifter {
 
 	private final List<String> destination;
 

@@ -13,6 +13,10 @@ public final class ObservableLines{
 		lines.addListener(shifter);
 	}
 	
+	public ObservableLines(){
+		lines = observableArrayList();
+	}
+	
 	public ObservableList<String> get(){
 		return lines;
 	}
