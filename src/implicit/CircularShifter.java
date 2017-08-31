@@ -45,16 +45,21 @@ public final class CircularShifter implements Shifter {
 
 			String firstWord = words.getFirst();
 			for (int i = 0; i < words.size(); i++) {
-				if (!ignoredWords.contains(firstWord)) {
+				
+				if (!ignoredWords.contains(firstWord) && ! firstWord.equals(" ")) {
+					
 					StringBuilder s = new StringBuilder();
 					for (String word : words) {
 						s.append(word);
 						s.append(' ');
 					}
+					
 					shifted.add(s.substring(0, s.length() - 1));
 				}
-				firstWord = words.pollFirst();
-				words.addLast(firstWord);
+				
+				words.addLast(words.pollFirst());
+				firstWord = words.getFirst();
+				
 			}
 
 		}
